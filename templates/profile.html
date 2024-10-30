@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ user.display_name or user.username }}'s Profile</h1>
+    {% if user.bio %}
+        <p>{{ user.bio }}</p>
+    {% endif %}
+    {% if user == current_user %}
+        <p><a href="{{ url_for('edit_profile', username=user.username) }}">Edit Profile</a></p>
+    {% endif %}
+    <h2>Messages</h2>
+    {% for message in messages %}
+        <div class="post">
+            <p>{{ message.content }}</p>
+            <small>Posted on {{ message.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+        </div>
+    {% endfor %}
+{% endblock %}

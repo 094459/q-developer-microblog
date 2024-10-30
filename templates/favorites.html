@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>My Favorite Posts</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                <p>{{ message.content }}</p>
+                <small>
+                    Posted by <a href="{{ url_for('profile', username=message.author.username) }}">{{ message.author.username }}</a>
+                    at {{ message.created_at.strftime('%Y-%m-%d %H:%M') }}
+                </small>
+                
+                <form action="{{ url_for('unfavorite_message', message_id=message.id) }}" method="post" style="display: inline;">
+                    <button type="submit">Unfavorite</button>
+                </form>
+            </div>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>You haven't favorited any posts yet.</p>
+    {% endif %}
+{% endblock %}

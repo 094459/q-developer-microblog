@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+}
+
+form {
+    margin-bottom: 1rem;
+}
+
+input, textarea {
+    display: block;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+button {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+
+.post {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.users-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.user-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.user-card h3 {
+    margin: 0 0 10px 0;
+}
+
+.user-card h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.user-card h3 a:hover {
+    color: #007bff;
+}
+
+.user-card .display-name {
+    color: #666;
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.user-card .bio {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.user-card .member-since,
+.user-card .post-count {
+    font-size: 0.8em;
+    color: #777;
+    margin: 5px 0;
+}
+
+.nav-links {
+    margin: 20px 0;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.nav-link:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.message p {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.message small {
+    display: block;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.message small a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.message small a:hover {
+    text-decoration: underline;
+}
+
+.message form {
+    margin-top: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.nav-links {
+    margin: 20px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.nav-link:hover {
+    background-color: #0056b3;
+}
+

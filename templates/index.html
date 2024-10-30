@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Home</h1>
+     <!-- Navigation Links -->
+     <!-- <div class="nav-links">
+        <a href="{{ url_for('users') }}" class="nav-link">View All Users</a>
+    </div> -->
+    <div class="nav-links">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('favorites') }}" class="nav-link">My Favorites</a>
+        {% endif %}
+        <a href="{{ url_for('users') }}" class="nav-link">View All Users</a>
+    </div>
+    <!-- Message posting form -->
+    <form action="{{ url_for('create_post') }}" method="post">
+        <textarea name="content" rows="3" maxlength="200" placeholder="What's on your mind?"></textarea>
+        <button type="submit">Post</button>
+    </form>
+
+    <!-- Display messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                <!-- Message content -->
+                <p>{{ message.content }}</p>
+                
+                <!-- Message metadata -->
+                <small>
+                    Posted by <a href="{{ url_for('profile', username=message.author.username) }}">{{ message.author.username }}</a>
+                    at {{ message.created_at.strftime('%Y-%m-%d %H:%M') }}
+                </small>
+
+                <!-- Favorite/Unfavorite buttons -->
+                {% if current_user.is_authenticated %}
+                    {% if message in current_user.favorites.all() %}
+                        <form action="{{ url_for('unfavorite_message', message_id=message.id) }}" method="post" style="display: inline;">
+                            <button type="submit">Unfavorite</button>
+                        </form>
+                    {% else %}
+                        <form action="{{ url_for('favorite_message', message_id=message.id) }}" method="post" style="display: inline;">
+                            <button type="submit">Favorite</button>
+                        </form>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No messages yet.</p>
+    {% endif %}
+{% endblock %}
